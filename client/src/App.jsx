@@ -1,5 +1,4 @@
-import { Box, Button, useColorModeValue } from "@chakra-ui/react";
-import React from "react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CreateProduct from "./pages/CreateProduct";
