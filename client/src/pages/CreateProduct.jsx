@@ -8,15 +8,22 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { useProductStore } from "../store/product";
 
 const CreateProduct = () => {
+  const { products } = useProductStore();
+  const { createProduct } = useProductStore();
+
   const [product, setProduct] = useState({
     name: "",
     price: "",
     image: "",
   });
 
-  const handleAddProduct = () => {};
+  const handleAddProduct = async () => {
+    const { success, message } = await createProduct(product);
+    console.log({ success, message });
+  };
   return (
     <Container maxW={"container.sm"}>
       <VStack spacing={8}>
