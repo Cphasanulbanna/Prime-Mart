@@ -28,13 +28,24 @@ app.post("/api/products", async (req, res) => {
   }
 });
 
+app.length("/api/products", async (req, res) => {
+  try {
+    const products = await Product.find({});
+    res.status(200).json({ success: true, products });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.delete("/api/products/:id", async (req, res) => {
   const { id } = req.params;
 
   try {
     await Product.findByIdAndDelete(id);
     res.status(200).json({ success: true, message: "Product deleted" });
-  } catch (error) {}
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
 });
 
 app.listen(5000, () => {
