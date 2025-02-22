@@ -20,6 +20,6 @@ export const useProductStore = create((set) => ({
       products: [...state.products, data?.data],
     }));
 
-    return { success: true, message: "Please created" };
+    return { success: true, message: "Product created" };
   },
 }));
