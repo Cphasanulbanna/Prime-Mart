@@ -12,7 +12,6 @@ import { useState } from "react";
 import { useProductStore } from "../store/product";
 
 const CreateProduct = () => {
-  const { products } = useProductStore();
   const { createProduct } = useProductStore();
   const toast = useToast();
 
